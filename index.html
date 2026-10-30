@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atenea</title>
+<style>
+  :root {
+    --bg: #f7f9fb;
+    --surface: #ffffff;
+    --fg: #15202b;
+    --muted: #5b6b7a;
+    --accent: #2e7bff;
+    --accent-2: #3fe0f5;
+    --border: #e1e7ec;
+    --font-display: "Manrope", system-ui, sans-serif;
+    --font-body: "Source Sans 3", system-ui, sans-serif;
+    --font-mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1420;
+      --surface: #111d2c;
+      --fg: #e7eef5;
+      --muted: #8ba0b4;
+      --accent: #3fe0f5;
+      --accent-2: #2e7bff;
+      --border: #1f3042;
+      color-scheme: dark;
+    }
+  }
+
+  @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap");
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    line-height: 1.55;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding-block: 64px 48px;
+  }
+
+  .marca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+  .punto {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-2), var(--accent));
+    flex: none;
+  }
+  .marca span {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .subtitulo {
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin: 0 0 40px;
+    max-width: 52ch;
+  }
+
+  .tarjeta {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+  .tarjeta h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0 0 8px;
+  }
+  .tarjeta p {
+    color: var(--muted);
+    margin: 0;
+    font-size: 0.96rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    border-radius: 999px;
+    padding: 4px 12px;
+    margin-bottom: 20px;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    color: var(--muted);
+    font-size: 0.88rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    justify-content: space-between;
+  }
+  footer a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  footer a:hover { color: var(--fg); }
+</style>
+</head>
+<body>
+<main>
+  <div class="marca">
+    <div class="punto"></div>
+    <span>ATENEA</span>
+  </div>
+
+  <span class="etiqueta">● herramienta personal, no pública</span>
+
+  <h1>La asistente personal de Imer Xaminez</h1>
+  <p class="subtitulo">
+    Atenea vive en una sola Mac, escucha solo a Imer y solo responde a él. Esta página
+    existe nada más como referencia pública mínima del proyecto — no es un producto,
+    no tiene usuarios ni registro, y nadie más puede instalarla ni usarla.
+  </p>
+
+  <div class="grid">
+    <div class="tarjeta">
+      <h2>Qué es</h2>
+      <p>Un asistente de voz e IA que corre en la barra de menú de la Mac de Imer: recordatorios, memoria personal, y un puñado de ayudantes que automatizan tareas suyas.</p>
+    </div>
+    <div class="tarjeta">
+      <h2>El Programador</h2>
+      <p>Uno de esos ayudantes sube y programa videos cortos en los canales de YouTube de Imer, siempre con su confirmación explícita antes de publicar nada.</p>
+    </div>
+  </div>
+
+  <footer>
+    <span>Atenea — proyecto personal de Imer Xaminez.</span>
+    <a href="privacidad.html">Política de privacidad</a>
+  </footer>
+</main>
+</body>
+</html>
